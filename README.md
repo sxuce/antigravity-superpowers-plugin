@@ -97,7 +97,7 @@ Before starting, make sure you have these tools:
 
 ### Step 2: Set Up This Framework in Your Project
 
-You have two options:
+You have three options:
 
 #### Option A: Start a New Project (Recommended for First-Time Users)
 
@@ -179,7 +179,24 @@ You have two options:
 
    You should see: `6 passed` ✅
 
-4. **Open Antigravity in this folder**
+ 4. **Open Antigravity in this folder**
+
+#### Option C: Install Globally as a Plugin (Modern & Reusable)
+
+If you want to use the planning framework globally across multiple independent projects without having to copy `.agent` folders into each directory, you can install it as an Antigravity plugin:
+
+1. **Clone the repository locally:**
+   ```bash
+   git clone https://github.com/sxuce/antigravity-superpowers-plugin.git
+   ```
+
+2. **Install the plugin using the `agy` CLI:**
+   ```bash
+   cd antigravity-superpowers-plugin
+   agy plugin install .
+   ```
+
+*(Note: Installing directly via `agy plugin install <URL>` is currently subject to a bug in the `agy` CLI downloader that misinterprets the temporary directory's format as an "unsupported extension format". Local cloning and installing via `agy plugin install .` is 100% reliable and fail-proof!)*
 
 ---
 
