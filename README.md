@@ -84,24 +84,14 @@ Before starting, make sure you have these tools:
 - Should show: `Python 3.10.x` or higher
 - Don't have it? [Download Python](https://www.python.org/downloads/)
 
-#### 🎨 Optional (Only needed for parallel execution):
+#### 🎨 Required for Parallel Execution:
 
-**Gemini CLI** (makes things faster but not required)
+**Antigravity CLI (agy)** (needed to execute subagents in parallel)
 - How to check:
   ```bash
-  gemini --version
+  agy --version
   ```
-- If it says "command not found", you don't have it
-- To install:
-  ```bash
-  npm install -g @google/gemini-cli
-  ```
-
-  **Windows users:** After installing, verify it works:
-  ```powershell
-  gemini --version
-  ```
-  If you see a version number, you're good! If not, see [Troubleshooting](#troubleshooting) below.
+- If it says "command not found", you need to make sure the Antigravity CLI (`agy`) is installed and available in your system's PATH.
 
 ---
 
@@ -130,13 +120,13 @@ You have two options:
    **Windows (PowerShell):**
    ```powershell
    # Replace the path with where you downloaded this repo
-   Copy-Item -Recurse C:\path\to\gemini-superpowers-antigravity\.agent .
+   Copy-Item -Recurse C:\path\to\superpowers-antigravity\.agent .
    ```
 
    **Mac/Linux:**
    ```bash
    # Replace the path with where you cloned this repo
-   cp -r /path/to/gemini-superpowers-antigravity/.agent .
+   cp -r /path/to/superpowers-antigravity/.agent .
    ```
 
 3. **Initialize git (required for the framework to work):**
@@ -161,7 +151,7 @@ You have two options:
 1. **Clone this repo:**
    ```bash
    git clone <your-repo-url>
-   cd gemini-superpowers-antigravity
+   cd superpowers-antigravity
    ```
 
 2. **Install Python dependencies (for the demo only):**
@@ -458,55 +448,21 @@ Check `artifacts/superpowers/subagents/` - you'll see one log file per subagent 
 
 ---
 
-### Parallel execution fails with "gemini not found"
+### Parallel execution fails with "agy not found"
 
-**Problem:** You don't have Gemini CLI installed, or it's not in your system PATH.
+**Problem:** You don't have the Antigravity CLI (`agy`) installed, or it's not in your system PATH.
 
-**Solution for Windows:**
+**Solution:**
 
-1. **Install Gemini CLI:**
-   ```powershell
-   npm install -g @google/gemini-cli
-   ```
-
-2. **Verify it installed:**
-   ```powershell
-   gemini --version
-   ```
-
-   Should show: `@google/gemini-cli version X.X.X`
-
-3. **If it still says "not found":**
-   - Restart PowerShell (npm might have updated your PATH)
-   - Check if npm's global bin directory is in your PATH:
-     ```powershell
-     npm config get prefix
-     ```
-   - The output should be something like `C:\Users\YourName\AppData\Roaming\npm`
-   - Add that path to your system PATH environment variable
-
-4. **Alternative:** Just use sequential execution instead:
+1. **Verify your Antigravity installation:** Make sure `agy` is installed on your system.
+2. **Verify your PATH:** Check that the directory containing the `agy` binary is in your system's PATH.
+   - On Linux/Mac: Check `echo $PATH`.
+   - On Windows: Check your environment variables.
+3. **Alternative:** Just use sequential execution instead:
    ```
    /superpowers-execute-plan
    ```
-   (It's a bit slower but works without Gemini CLI)
-
-**Solution for Mac/Linux:**
-
-1. **Install Gemini CLI:**
-   ```bash
-   npm install -g @google/gemini-cli
-   ```
-
-2. **Verify:**
-   ```bash
-   which gemini
-   ```
-   Should show a path like: `/usr/local/bin/gemini`
-
-3. **If not found:**
-   - Make sure npm's bin directory is in PATH
-   - Try: `echo $PATH` and look for npm's bin folder
+   (It runs natively and doesn't require calling the external CLI)
 
 ---
 

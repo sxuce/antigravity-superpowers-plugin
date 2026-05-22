@@ -1,0 +1,16 @@
+{
+  "name": "superpowers-antigravity",
+  "version": "1.0.0",
+  "description": "A systematic workflow framework for Google Antigravity that helps you build better code through structured planning, test-driven development, and optional parallel execution.",
+  "author": {
+    "name": "sxuce"
+  },
+  "repository": "https://github.com/sxuce/antigravity-superpowers-plugin",
+  "license": "MIT",
+  "keywords": [
+    "antigravity",
+    "superpowers",
+    "workflows",
+    "agents"
+  ]
+}

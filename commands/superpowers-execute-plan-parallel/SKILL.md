@@ -57,16 +57,16 @@ If `artifacts/superpowers/plan.md` does not exist:
 1. **Spawn subagents in parallel** for all steps in the batch:
 
 ```bash
-# Example: Batch 1 has 3 independent steps
-python .agent/skills/superpowers-workflow/scripts/spawn_subagent.py \
+# Example: Batch 1 has 3 independent steps. Use the spawn_subagent.py script located under the plugin's skills/superpowers-workflow/scripts/ directory (e.g. ~/.gemini/antigravity-cli/plugins/superpowers-antigravity/skills/superpowers-workflow/scripts/spawn_subagent.py) or .agent/skills/superpowers-workflow/scripts/:
+python <path_to_spawn_subagent>/spawn_subagent.py \
   --skill tdd \
   --task "Step 1: Add retry logic to sync.py with exponential backoff" &
 
-python .agent/skills/superpowers-workflow/scripts/spawn_subagent.py \
+python <path_to_spawn_subagent>/spawn_subagent.py \
   --skill rest-automation \
   --task "Step 2: Add pagination handling to fetch_items()" &
 
-python .agent/skills/superpowers-workflow/scripts/spawn_subagent.py \
+python <path_to_spawn_subagent>/spawn_subagent.py \
   --skill python-automation \
   --task "Step 3: Update CLI args to support --max-retries flag" &
 
@@ -177,7 +177,7 @@ After all batches complete:
 
 ### Subagent spawn fails
 - Check that `agy` is in PATH (verify with: `agy --version`)
-- Verify skill exists: `.agent/skills/superpowers-{skill}/SKILL.md` (or `skills/...`)
+- Verify skill exists: `skills/superpowers-{skill}/SKILL.md` (or `.agent/skills/...`)
 - Check subagent logs in `artifacts/superpowers/subagents/`
 
 ### Steps conflict
