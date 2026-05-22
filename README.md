@@ -38,13 +38,13 @@ You: "Build me a CLI tool"
 ### Workflows (Slash Commands)
 These are commands you type in Antigravity:
 
-- `/superpowers-brainstorm` - Explore ideas and ask questions before planning
-- `/superpowers-write-plan` - Create a detailed plan (no code yet!)
-- `/superpowers-execute-plan` - Build the code step-by-step
-- `/superpowers-execute-plan-parallel` - Build independent steps in parallel (faster!)
-- `/superpowers-review` - Check code quality
-- `/superpowers-debug` - Systematic debugging
-- `/superpowers-finish` - Final summary and documentation
+- `/superpowers:brainstorm` - Explore ideas and ask questions before planning
+- `/superpowers:write-plan` - Create a detailed plan (no code yet!)
+- `/superpowers:execute-plan` - Build the code step-by-step
+- `/superpowers:execute-plan-parallel` - Build independent steps in parallel (faster!)
+- `/superpowers:review` - Check code quality
+- `/superpowers:debug` - Systematic debugging
+- `/superpowers:finish` - Final summary and documentation
 
 ### Skills (Building Blocks)
 These teach the AI how to work:
@@ -120,13 +120,13 @@ You have three options:
    **Windows (PowerShell):**
    ```powershell
    # Replace the path with where you downloaded this repo
-   Copy-Item -Recurse C:\path\to\superpowers-antigravity\.agent .
+   Copy-Item -Recurse C:\path\to\gemini-superpowers-antigravity\.agent .
    ```
 
    **Mac/Linux:**
    ```bash
    # Replace the path with where you cloned this repo
-   cp -r /path/to/superpowers-antigravity/.agent .
+   cp -r /path/to/gemini-superpowers-antigravity/.agent .
    ```
 
 3. **Initialize git (required for the framework to work):**
@@ -151,7 +151,7 @@ You have three options:
 1. **Clone this repo:**
    ```bash
    git clone <your-repo-url>
-   cd superpowers-antigravity
+   cd gemini-superpowers-antigravity
    ```
 
 2. **Install Python dependencies (for the demo only):**
@@ -204,7 +204,7 @@ If you want to use the planning framework globally across multiple independent p
 
 1. **In Antigravity, type:**
    ```
-   /superpowers-reload
+   /superpowers:reload
    ```
 
 2. **You should see output like:**
@@ -236,7 +236,7 @@ Let's build something simple to see how it works.
 
 In Antigravity, type:
 ```
-/superpowers-brainstorm
+/superpowers:brainstorm
 
 I want to build a simple calculator CLI tool in Python that can add, subtract, multiply, and divide two numbers.
 ```
@@ -257,7 +257,7 @@ I want to build a simple calculator CLI tool in Python that can add, subtract, m
 
 In Antigravity, type:
 ```
-/superpowers-write-plan
+/superpowers:write-plan
 
 Build a Python calculator CLI with add, subtract, multiply, divide functions. Use argparse for command-line args. Include tests for each function.
 ```
@@ -303,12 +303,12 @@ Verify: python cli.py add 2 3
 
 After you approve, the AI will say:
 ```
-Plan approved. Run `/superpowers-execute-plan` to begin implementation.
+Plan approved. Run `/superpowers:execute-plan` to begin implementation.
 ```
 
 Now type:
 ```
-/superpowers-execute-plan
+/superpowers:execute-plan
 ```
 
 **What happens:**
@@ -394,10 +394,10 @@ If your plan has **independent steps** (steps that don't depend on each other), 
 
 **Option 1: Let the AI suggest it**
 
-When you run `/superpowers-execute-plan`, if the AI detects independent steps, it will ask:
+When you run `/superpowers:execute-plan`, if the AI detects independent steps, it will ask:
 ```
 I notice steps 1, 2, 3 are independent and could run in parallel.
-Would you like to use `/superpowers-execute-plan-parallel` for faster execution?
+Would you like to use `/superpowers:execute-plan-parallel` for faster execution?
 Or continue with sequential execution? (Reply: PARALLEL or SEQUENTIAL)
 ```
 
@@ -407,7 +407,7 @@ Reply: `PARALLEL`
 
 After approving your plan, type:
 ```
-/superpowers-execute-plan-parallel
+/superpowers:execute-plan-parallel
 ```
 
 ### What's Different in Parallel Mode?
@@ -459,7 +459,7 @@ Check `artifacts/superpowers/subagents/` - you'll see one log file per subagent 
 1. Make sure you're in the folder that contains `.agent/`
 2. Try running:
    ```
-   /superpowers-reload
+   /superpowers:reload
    ```
 3. If that doesn't work, close Antigravity and reopen it in the correct folder
 
@@ -477,7 +477,7 @@ Check `artifacts/superpowers/subagents/` - you'll see one log file per subagent 
    - On Windows: Check your environment variables.
 3. **Alternative:** Just use sequential execution instead:
    ```
-   /superpowers-execute-plan
+   /superpowers:execute-plan
    ```
    (It runs natively and doesn't require calling the external CLI)
 
@@ -491,12 +491,12 @@ Check `artifacts/superpowers/subagents/` - you'll see one log file per subagent 
 1. Make sure `.agent/rules/superpowers.md` exists
 2. Try running:
    ```
-   /superpowers-reload
+   /superpowers:reload
    ```
 3. Start a new Antigravity conversation
 4. Explicitly use the workflows:
    ```
-   /superpowers-write-plan <your task>
+   /superpowers:write-plan <your task>
    ```
 
 ---
@@ -524,7 +524,7 @@ Check `artifacts/superpowers/subagents/` - you'll see one log file per subagent 
 
 **Solution:**
 ```
-/superpowers-reload
+/superpowers:reload
 ```
 
 This forces Antigravity to re-read all `.agent/` files.
@@ -539,12 +539,12 @@ your-project/
 │   ├── rules/
 │   │   └── superpowers.md          ← Rules the AI must follow
 │   ├── workflows/
-│   │   ├── superpowers-write-plan.md
-│   │   ├── superpowers-execute-plan.md
+│   │   ├── write-plan.md
+│   │   ├── execute-plan.md
 │   │   └── ...                      ← Slash commands
 │   └── skills/
-│       ├── superpowers-tdd/
-│       ├── superpowers-debug/
+│       ├── tdd/
+│       ├── debug/
 │       └── ...                      ← Building blocks for the AI
 │
 ├── artifacts/                       ← Generated outputs (git-ignored)
@@ -569,12 +569,12 @@ your-project/
 
 **Commands you'd use:**
 ```
-/superpowers-write-plan Create a Python script that counts words in a text file
+/superpowers:write-plan Create a Python script that counts words in a text file
 → Review plan
 APPROVED
 → AI creates plan
 
-/superpowers-execute-plan
+/superpowers:execute-plan
 → AI builds: word_counter.py, test_word_counter.py
 → AI verifies it works
 → Done!
@@ -590,15 +590,15 @@ APPROVED
 
 **Commands:**
 ```
-/superpowers-brainstorm I want to build a GitHub API client
+/superpowers:brainstorm I want to build a GitHub API client
 → AI asks: Authentication? Rate limiting? Which endpoints?
 → You answer
 
-/superpowers-write-plan Build a GitHub API client with authentication, rate limiting, and repo listing
+/superpowers:write-plan Build a GitHub API client with authentication, rate limiting, and repo listing
 → AI creates detailed plan
 APPROVED
 
-/superpowers-execute-plan
+/superpowers:execute-plan
 → AI implements step-by-step
 → Each step verified
 → Done!
@@ -614,7 +614,7 @@ APPROVED
 
 **Commands:**
 ```
-/superpowers-write-plan
+/superpowers:write-plan
 
 Add three features to my CLI:
 1. Logging to a file
@@ -626,7 +626,7 @@ Each feature should be independent.
 → AI creates plan with 3 independent steps
 APPROVED
 
-/superpowers-execute-plan-parallel
+/superpowers:execute-plan-parallel
 → AI spawns 3 subagents
 → All 3 features built simultaneously
 → 60% faster than sequential!
@@ -641,9 +641,9 @@ APPROVED
 ### Most Common Workflow
 
 ```
-1. /superpowers-write-plan <describe what you want>
+1. /superpowers:write-plan <describe what you want>
 2. Read the plan, type: APPROVED
-3. /superpowers-execute-plan
+3. /superpowers:execute-plan
 4. Done! Check your code and artifacts/superpowers/finish.md
 ```
 
@@ -651,14 +651,14 @@ APPROVED
 
 | Command | What It Does | When to Use |
 |---------|-------------|-------------|
-| `/superpowers-brainstorm` | Explore ideas with Q&A | When you're not sure exactly what you want |
-| `/superpowers-write-plan` | Create a detailed plan | Start of every task |
-| `/superpowers-execute-plan` | Build code step-by-step | After approving plan |
-| `/superpowers-execute-plan-parallel` | Build independent steps in parallel | When plan has 3+ independent steps |
-| `/superpowers-review` | Check code quality | Before finishing, or when debugging |
-| `/superpowers-debug` | Systematic debugging | When something's broken |
-| `/superpowers-finish` | Create final summary | After everything works |
-| `/superpowers-reload` | Reload all workflows/rules | After editing .agent/ files |
+| `/superpowers:brainstorm` | Explore ideas with Q&A | When you're not sure exactly what you want |
+| `/superpowers:write-plan` | Create a detailed plan | Start of every task |
+| `/superpowers:execute-plan` | Build code step-by-step | After approving plan |
+| `/superpowers:execute-plan-parallel` | Build independent steps in parallel | When plan has 3+ independent steps |
+| `/superpowers:review` | Check code quality | Before finishing, or when debugging |
+| `/superpowers:debug` | Systematic debugging | When something's broken |
+| `/superpowers:finish` | Create final summary | After everything works |
+| `/superpowers:reload` | Reload all workflows/rules | After editing .agent/ files |
 
 ---
 
@@ -695,7 +695,7 @@ MIT License - See LICENSE file
 2. **Read the plans:** Don't just blindly approve - actually review what the AI suggests
 3. **Use parallel mode wisely:** It's faster but harder to debug if something goes wrong
 4. **Check artifacts:** The `artifacts/superpowers/` folder tells you exactly what happened
-5. **Reload often:** If you edit workflows, always run `/superpowers-reload`
+5. **Reload often:** If you edit workflows, always run `/superpowers:reload`
 6. **Ask questions:** If the plan doesn't make sense, ask the AI to clarify before approving
 
 Happy coding! 🚀

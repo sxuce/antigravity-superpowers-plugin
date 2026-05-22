@@ -1,5 +1,5 @@
 {
-  "name": "superpowers-antigravity",
+  "name": "superpowers",
   "version": "1.0.0",
   "description": "A systematic workflow framework for Google Antigravity that helps you build better code through structured planning, test-driven development, and optional parallel execution.",
   "author": {
