@@ -1,6 +1,6 @@
 ---
 name: finish
-description: Finalizes work: runs verification, summarizes changes, notes follow-ups, and ensures repo hygiene. Use at the end of an implementation or debugging session.
+description: "Finalizes work: runs verification, summarizes changes, notes follow-ups, and ensures repo hygiene. Use at the end of an implementation or debugging session."
 ---
 
 # Finish Skill

@@ -1,5 +1,5 @@
 ---
-description: Superpowers brainstorm. Produces goal/constraints/risks/options/recommendation/acceptance criteria.
+description: "Superpowers brainstorm. Produces goal/constraints/risks/options/recommendation/acceptance criteria."
 ---
 
 # Superpowers Brainstorm

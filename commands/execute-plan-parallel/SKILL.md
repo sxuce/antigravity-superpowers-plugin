@@ -1,5 +1,5 @@
 ---
-description: Execute an approved plan with parallel execution for independent steps. Spawns isolated subagents. Consolidates results.
+description: "Execute an approved plan with parallel execution for independent steps. Spawns isolated subagents. Consolidates results."
 ---
 
 # Superpowers Execute Plan (Parallel Mode)

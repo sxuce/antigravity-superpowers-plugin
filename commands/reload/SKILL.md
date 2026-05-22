@@ -1,5 +1,5 @@
 ---
-description: Reloads Superpowers configuration by re-reading Rules, Workflows, and Skills from disk.
+description: "Reloads Superpowers configuration by re-reading Rules, Workflows, and Skills from disk."
 ---
 
 # Superpowers Reload

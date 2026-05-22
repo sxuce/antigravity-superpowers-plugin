@@ -1,5 +1,5 @@
 ---
-description: Finalize work: verification, summary, follow-ups, manual validation steps.
+description: "Finalize work: verification, summary, follow-ups, manual validation steps."
 ---
 
 # Superpowers Finish

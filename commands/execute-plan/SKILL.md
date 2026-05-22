@@ -1,5 +1,5 @@
 ---
-description: Executes an approved plan in small steps with verification after each step. Writes execution artifacts to disk. Stops on failures. Finishes with review + summary.
+description: "Executes an approved plan in small steps with verification after each step. Writes execution artifacts to disk. Stops on failures. Finishes with review + summary."
 ---
 
 # Superpowers Execute Plan

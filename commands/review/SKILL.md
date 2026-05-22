@@ -1,5 +1,5 @@
 ---
-description: Runs a Superpowers-style review pass with severity levels.
+description: "Runs a Superpowers-style review pass with severity levels."
 ---
 
 # Superpowers Review

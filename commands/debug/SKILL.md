@@ -1,5 +1,5 @@
 ---
-description: Systematic debugging workflow: reproduce, minimize, hypotheses, instrument, fix, prevent, verify.
+description: "Systematic debugging workflow: reproduce, minimize, hypotheses, instrument, fix, prevent, verify."
 ---
 
 # Superpowers Debug

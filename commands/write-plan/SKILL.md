@@ -1,5 +1,5 @@
 ---
-description: Superpowers plan gate. Writes a small-step plan with files + verification. Must ask for approval before coding.
+description: "Superpowers plan gate. Writes a small-step plan with files + verification. Must ask for approval before coding."
 ---
 
 # Superpowers Write Plan (Gate)

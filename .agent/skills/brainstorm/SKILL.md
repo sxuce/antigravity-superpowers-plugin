@@ -1,6 +1,6 @@
 ---
 name: brainstorm
-description: Produces a structured brainstorm: goals, constraints, risks, options, recommendation, and acceptance criteria. Use before non-trivial implementation or design changes.
+description: "Produces a structured brainstorm: goals, constraints, risks, options, recommendation, and acceptance criteria. Use before non-trivial implementation or design changes."
 ---
 
 # Brainstorm Skill
